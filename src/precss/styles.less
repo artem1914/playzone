@@ -1,16 +1,67 @@
-@maincolor: rgba(240, 135, 6, 0.933);
+@import "libs/vars.less";
+
+
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+
 .container{
-	width: 1200px;
+	width: 100%;
 	background-color: @maincolor;
+	background-image: url("@{url}/icons/favicon.png");
+	padding: extract(@paddings, 1);
+	margin: @margins[smal];
+	
+
+
 
 	h2{
-		color: #000;
-		padding-top: 50px;
-		padding-bottom: 50px;
+		
+		color: rgb(41, 6, 238);
+		padding-top: @margins[smal];
+		padding-bottom: @margins[smal];
 		span{
+			@size: 15px;
 			display: inline-block;
-			width: 50%;
-			background-color: #fff;
+			width: @size;
+			background-color: rgb(247, 245, 249);
+		}
+	}
+}
+
+.menu{
+	background-color: #999;
+	background-image: url("@{url}/icons/favicon.png");
+	
+
+	&-items{
+		list-style: none;
+		
+		
+
+		&__item{
+			padding: extract(@paddings, 2);
+			&_big{
+				font-size: 40px;
+			}
+			&+&{
+				margin-top: 50px;
+			}
+			&.active{
+				background-color: green;
+			}
+		}
+	}
+}
+
+.menu-items{
+	&__link{
+		color: rgb(1, 1, 1);
+		&:hover{
+			color: @maincolor;
 		}
 	}
 }
